@@ -43,6 +43,7 @@
   tags:
     - gitlab
   roles:
+    - oatakan.rhn
     - { role: linux-common }
     - { role: geerlingguy.gitlab }
 
@@ -67,6 +68,7 @@
   tags:
     - ansible-tower
   roles:
+    - oatakan.rhn
     - linux-common
     - ansible-tower
 
@@ -90,6 +92,7 @@
   tags:
     - docs
   roles:
+    - oatakan.rhn
     - linux-common
     - { role: geerlingguy.repo-epel, when: (public_dns_zone is defined and nginx_ssl | bool) }
     - { role: geerlingguy.certbot, when: (public_dns_zone is defined and nginx_ssl | bool) }

@@ -1,0 +1,3 @@
+- src: https://github.com/oatakan/ansible-role-rhn
+  version: origin/master
+  name: oatakan.rhn
