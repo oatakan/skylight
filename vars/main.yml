@@ -161,6 +161,13 @@ vmware_windc_template: "{{ vCenterCloneSourceWindows }}"
 vmware_windows_workstation_template: "{{ vCenterCloneSourceWindows }}"
 vmware_windows_template: "{{ vCenterCloneSourceWindows }}"
 
+vmware_tower_memory: 4096
+vmware_gitlab_memory: 4096
+vmware_docs_memory: 4096
+vmware_windc_memory: 4096
+vmware_windows_workstation_memory: 4096
+vmware_windows_memory: 4096
+
 ##########################################################
 #################### OVIRT/RHV INFO ######################
 ##########################################################

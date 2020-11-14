@@ -14,6 +14,9 @@
     state: poweredon
     wait_for_ip_address: true
     validate_certs: false
+    hardware:
+      memory_mb: "{{ vmware_windc_memory }}"
+      num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
       type: dhcp
@@ -65,7 +68,7 @@
     wait_for_ip_address: true
     validate_certs: false
     hardware:
-      memory_mb: 4096
+      memory_mb: "{{ vmware_gitlab_memory }}"
       num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
@@ -93,7 +96,7 @@
     wait_for_ip_address: true
     validate_certs: false
     hardware:
-      memory_mb: 4096
+      memory_mb: "{{ vmware_docs_memory }}"
       num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
@@ -121,7 +124,7 @@
     wait_for_ip_address: true
     validate_certs: false
     hardware:
-      memory_mb: 4096
+      memory_mb: "{{ vmware_tower_memory }}"
       num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
@@ -148,6 +151,9 @@
     state: poweredon
     wait_for_ip_address: true
     validate_certs: false
+    hardware:
+      memory_mb: "{{ vmware_windows_memory }}"
+      num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
       type: dhcp
@@ -197,6 +203,9 @@
     state: poweredon
     wait_for_ip_address: true
     validate_certs: false
+    hardware:
+      memory_mb: "{{ vmware_windows_workstation_memory }}"
+      num_cpus: 2
     networks:
     - name: "{{ vCenterPortGroup }}"
       type: dhcp
