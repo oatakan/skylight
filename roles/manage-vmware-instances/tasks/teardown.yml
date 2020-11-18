@@ -113,28 +113,28 @@
   register: dc_instances
   until: dc_instances.finished
   retries: 300
-  with_items: "{{ dc_jobs.results }}"
+  with_items: "{{ dc_jobs.results | default([dc_jobs]) }}"
 
 - name: Wait for Gitlab instance creation to complete
   async_status: jid="{{ item.ansible_job_id }}"
   register: gitlab_instances
   until: gitlab_instances.finished
   retries: 300
-  with_items: "{{ gitlab_jobs.results }}"
+  with_items: "{{ gitlab_jobs.results | default([gitlab_jobs]) }}"
 
 - name: Wait for Docs instance creation to complete
   async_status: jid="{{ item.ansible_job_id }}"
   register: docs_instances
   until: docs_instances.finished
   retries: 300
-  with_items: "{{ docs_jobs.results }}"
+  with_items: "{{ docs_jobs.results | default([docs_jobs]) }}"
 
 - name: Wait for tower instance creation to complete
   async_status: jid="{{ item.ansible_job_id }}"
   register: tower_instances
   until: tower_instances.finished
   retries: 300
-  with_items: "{{ tower_jobs.results }}"
+  with_items: "{{ tower_jobs.results | default([tower_jobs]) }}"
 
 - name: Wait for windows instance creation to complete
   async_status: jid="{{ item.ansible_job_id }}"
@@ -142,7 +142,7 @@
   until: windows_instances.finished
   retries: 300
   with_items:
-    - "{{ windows1_jobs.results }}"
+    - "{{ windows1_jobs.results | default([windows1_jobs]) }}"
 
 - name: Wait for Workstation instance creation to complete
   async_status: jid="{{ item.ansible_job_id }}"
@@ -150,4 +150,4 @@
   until: workstation_instances.finished
   retries: 300
   with_items:
-    - "{{ workstation_jobs.results }}"
+    - "{{ workstation_jobs.results | default([workstation_jobs]) }}"
